@@ -1,0 +1,12 @@
+{
+  "name": "kanto-it-facility-availability",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "dependencies": {
+    "async": "^2.0.1",
+    "cheerio": "^0.20.0",
+    "phantom": "^2.1.13"
+  }
+}
