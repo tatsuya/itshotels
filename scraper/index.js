@@ -94,7 +94,7 @@ collectFacilities('https://as.its-kenpo.or.jp/service_group/index?s=eDBEWnBaU1ox
               if (error5) {
                 return console.log(error5);
               }
-              console.log('Done!');
+              return console.log('Done!');
             });
           }
         });
