@@ -23,3 +23,9 @@ Run unit test:
 ```
 npm test
 ```
+
+Deploy app to Heroku:
+
+```
+npm run deploy
+```
