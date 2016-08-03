@@ -90,7 +90,12 @@ collectFacilities('https://as.its-kenpo.or.jp/service_group/index?s=eDBEWnBaU1ox
             console.log(error4);
           } else {
             let hotels = new Hotels(result);
-            hotels.save();
+            hotels.save(function(error5) {
+              if (error5) {
+                return console.log(error5);
+              }
+              console.log('Done!');
+            });
           }
         });
       }

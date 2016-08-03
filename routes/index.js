@@ -21,15 +21,19 @@ function datesInRange(startStr, endStr) {
   return dates;
 }
 
-var hotels = Hotels.get();
 var dates = datesInRange('2016-07-01', '2016-09-30');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {
-    title: '施設空き照会',
-    hotels: hotels.data,
-    dates: dates
+  Hotels.get(function(err, hotels) {
+    if (err) {
+      return next(err);
+    }
+    res.render('index', {
+      title: '施設空き照会',
+      hotels: hotels.data,
+      dates: dates
+    });
   });
 });
 
