@@ -1,3 +1,5 @@
+'use strict';
+
 let Hotels = require('../lib/model/hotels');
 
 let hotels = Hotels.get();
