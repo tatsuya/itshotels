@@ -9,7 +9,8 @@
     "start": "node ./bin/www",
     "debug": "DEBUG=kanto-it-hotel-availability:* npm start",
     "feed": "node ./scraper",
-    "test": "node_modules/.bin/mocha --reporter spec"
+    "test": "node_modules/.bin/mocha --reporter spec",
+    "deploy": "git push heroku master"
   },
   "dependencies": {
     "async": "^2.0.1",
