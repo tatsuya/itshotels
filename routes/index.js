@@ -1,22 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-var fs = require('fs');
-var path = require('path');
-var moment = require('moment');
+var Hotels = require('../lib/model/hotels');
 
-function readHotels() {
-  var json;
-  try {
-    json = fs.readFileSync(path.join(__dirname, '../data/hotels.json'), 'utf8');
-  } catch (e) {
-    console.log(e);
-  }
-  if (!json) {
-    return [];
-  }
-  return JSON.parse(json);
-}
+var moment = require('moment');
 
 function datesInRange(startStr, endStr) {
   var start = new Date(startStr);
@@ -34,14 +21,14 @@ function datesInRange(startStr, endStr) {
   return dates;
 }
 
-var hotels = readHotels();
+var hotels = Hotels.get();
 var dates = datesInRange('2016-07-01', '2016-09-30');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
     title: '施設空き照会',
-    hotels: hotels,
+    hotels: hotels.data,
     dates: dates
   });
 });

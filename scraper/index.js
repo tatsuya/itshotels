@@ -57,20 +57,7 @@ function collectFacilities(url, callback) {
   })
 }
 
-let fs = require('fs');
-let path = require('path');
-
-function writeToJson(obj, filename) {
-  let str = '';
-  try {
-    str = JSON.stringify(obj, null, 4);
-  } catch (err) {
-    throw err;
-  }
-  let filepath = path.join(__dirname, filename);
-  console.log(`Writing data to ${filepath}`);
-  fs.writeFileSync(filepath, str);
-}
+let Hotels = require('../lib/model/hotels');
 
 collectFacilities('https://as.its-kenpo.or.jp/service_group/index?s=eDBEWnBaU1oxSkhkOWtIZHcxV1o%3D', (error, facilities) => {
   if (error) {
@@ -102,7 +89,8 @@ collectFacilities('https://as.its-kenpo.or.jp/service_group/index?s=eDBEWnBaU1ox
           if (error4) {
             console.log(error4);
           } else {
-            writeToJson(result, '../data/hotels.json');
+            let hotels = new Hotels(result);
+            hotels.save();
           }
         });
       }
