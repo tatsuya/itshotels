@@ -3,17 +3,4 @@ extends layout
 block content
   table
     tbody
-      each date in dates
-        tr
-          td #{date.displayDate}
-          td
-            - var availableHotels = [];
-            each hotel in hotels
-              each monthlyAvailability in hotel.monthlyAvailabilities
-                each availability in monthlyAvailability
-                  if date.date === availability
-                    - availableHotels.push(hotel.name);
-            if availableHotels.length
-              - var availableHotelsStr = availableHotels.join(', ');
-              span #{availableHotelsStr}
-
+      #calendar
