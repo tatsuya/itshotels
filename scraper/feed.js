@@ -59,46 +59,46 @@ function collectFacilities(url, callback) {
 
 let Hotels = require('../lib/model/hotels');
 
-collectFacilities('https://as.its-kenpo.or.jp/service_group/index?s=eDBEWnBaU1oxSkhkOWtIZHcxV1o%3D', (error, facilities) => {
-  if (error) {
-    console.log(error);
-  } else {
+module.exports = function(cb) {
+  collectFacilities('https://as.its-kenpo.or.jp/service_group/index?s=eDBEWnBaU1oxSkhkOWtIZHcxV1o%3D', (error, facilities) => {
+    if (error) {
+      return cb(error);
+    }
+
     async.mapLimit(facilities, 10, (facility, callback) => {
       collectMonthlyUrls(facility.url, callback);
     }, (error2, listOfMonthlyUrls) => {
       if (error2) {
-        console.log(error2);
-      } else {
-        listOfMonthlyUrls.forEach((monthlyUrls, i) => {
-          facilities[i].monthlyUrls = monthlyUrls;
-        });
-
-        async.mapLimit(facilities, 6, (facility, callback2) => {
-          console.log(`Checking availability for ${facility.name}`);
-          async.map(facility.monthlyUrls, collectAvailableDates, (error3, monthlyAvailabilities) => {
-            if (error3) {
-              return callback2(error3);
-            } else {
-              return callback2(null, {
-                name: facility.name,
-                monthlyAvailabilities: monthlyAvailabilities
-              });
-            }
-          });
-        }, (error4, result) => {
-          if (error4) {
-            console.log(error4);
-          } else {
-            let hotels = new Hotels(result);
-            hotels.save(function(error5) {
-              if (error5) {
-                return console.log(error5);
-              }
-              return console.log('Done!');
-            });
-          }
-        });
+        return cb(error2);
       }
+
+      listOfMonthlyUrls.forEach((monthlyUrls, i) => {
+        facilities[i].monthlyUrls = monthlyUrls;
+      });
+
+      async.mapLimit(facilities, 6, (facility, callback2) => {
+        console.log(`Checking availability for ${facility.name}`);
+        async.map(facility.monthlyUrls, collectAvailableDates, (error3, monthlyAvailabilities) => {
+          if (error3) {
+            return callback2(error3);
+          }
+          return callback2(null, {
+            name: facility.name,
+            monthlyAvailabilities: monthlyAvailabilities
+          });
+        });
+      }, (error4, result) => {
+        if (error4) {
+          return cb(error4);
+        }
+        let hotels = new Hotels(result);
+        hotels.save(function(error5) {
+          if (error5) {
+            return cb(error5);
+          }
+          return cb();
+        });
+      });
     });
-  }
-});
+  });
+};

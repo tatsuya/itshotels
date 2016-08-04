@@ -1,2 +1,2 @@
 web: npm start
-clock: node clock.js
+clock: node scraper/clock.js

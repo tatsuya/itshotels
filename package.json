@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "debug": "DEBUG=its-hotel-availability:* npm start",
-    "feed": "node ./scraper",
+    "feed": "node ./scraper/run",
     "test": "node_modules/.bin/mocha --reporter spec",
     "deploy": "git push heroku master"
   },
