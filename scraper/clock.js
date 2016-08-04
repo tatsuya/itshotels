@@ -1,6 +1,7 @@
 let feed = require('./feed');
 
 const MINUTE = 60 * 1000;
+const HOUR = 60 * MINUTE;
 
 function run() {
   feed(function(err) {
@@ -13,4 +14,4 @@ function run() {
 }
 
 run();
-setInterval(run, 2 * MINUTE);
+setInterval(run, 12 * HOUR);
