@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('kanto-it-hotel-availability:server');
+var debug = require('debug')('its-hotel-availability:server');
 var http = require('http');
 
 /**

@@ -1,4 +1,4 @@
-# kanto-it-hotel-availability
+# its-hotel-availability
 
 ## Development
 
