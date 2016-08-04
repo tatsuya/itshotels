@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
   res.render('index', {
-    title: '施設空き照会'
+    title: 'ITS健保（関東ITソフトウェア健康保険組合）の施設空き状況カレンダー'
   });
 });
 
