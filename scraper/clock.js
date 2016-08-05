@@ -1,10 +1,10 @@
-let feed = require('./feed');
+let scraper = require('./scraper');
 
 const MINUTE = 60 * 1000;
 const HOUR = 60 * MINUTE;
 
 function run() {
-  feed(function(err) {
+  scraper.listAll(function(err) {
     if (err) {
       console.log(err);
     } else {

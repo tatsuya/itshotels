@@ -59,7 +59,11 @@ function collectFacilities(url, callback) {
 
 let Hotels = require('../lib/model/hotels');
 
-module.exports = function(cb) {
+exports.listHotels = function(cb) {
+  collectFacilities('https://as.its-kenpo.or.jp/service_group/index?s=eDBEWnBaU1oxSkhkOWtIZHcxV1o%3D', cb);
+};
+
+exports.listAll = function(cb) {
   collectFacilities('https://as.its-kenpo.or.jp/service_group/index?s=eDBEWnBaU1oxSkhkOWtIZHcxV1o%3D', (error, facilities) => {
     if (error) {
       return cb(error);
