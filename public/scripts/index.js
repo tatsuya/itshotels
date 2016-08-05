@@ -10,10 +10,11 @@ $(document).ready(function() {
       var events = [];
       hotels.forEach(function(hotel) {
         hotel.monthlyAvailabilities.forEach(function(monthlyAvailability) {
-          monthlyAvailability.forEach(function(date) {
+          monthlyAvailability.dates.forEach(function(date) {
             events.push({
               title: hotel.name,
-              start: date
+              start: date,
+              url: monthlyAvailability.url
             });
           });
         });
@@ -28,7 +29,13 @@ $(document).ready(function() {
   function createCalendar(events) {
     $('#calendar').fullCalendar({
       lang: 'ja',
-      events: events
+      events: events,
+      eventClick: function(event) {
+        if (event.url) {
+          window.open(event.url);
+          return false;
+        }
+      }
     });
   }
 });

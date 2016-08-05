@@ -3,6 +3,8 @@ let cheerio = require('cheerio');
 
 let page = require('./page');
 
+const SEED_URL = 'https://as.its-kenpo.or.jp/service_group/index?s=eDBEWnBaU1oxSkhkOWtIZHcxV1o%3D';
+
 function collectAvailableDates(url, callback) {
   console.log(`Collecting availability for url=${url}`);
   page.get(url, (error, content) => {
@@ -37,7 +39,7 @@ function collectMonthlyUrls(url, callback) {
   });
 }
 
-function collectFacilities(url, callback) {
+function listHotels(url, callback) {
   console.log(`Collecting facilities for url=${url}`);
   page.get(url, (error, content) => {
     if (error) {
@@ -60,11 +62,11 @@ function collectFacilities(url, callback) {
 let Hotels = require('../lib/model/hotels');
 
 exports.listHotels = function(cb) {
-  collectFacilities('https://as.its-kenpo.or.jp/service_group/index?s=eDBEWnBaU1oxSkhkOWtIZHcxV1o%3D', cb);
+  listHotels(SEED_URL, cb);
 };
 
 exports.listAll = function(cb) {
-  collectFacilities('https://as.its-kenpo.or.jp/service_group/index?s=eDBEWnBaU1oxSkhkOWtIZHcxV1o%3D', (error, facilities) => {
+  listHotels(SEED_URL, (error, facilities) => {
     if (error) {
       return cb(error);
     }
@@ -82,7 +84,17 @@ exports.listAll = function(cb) {
 
       async.mapLimit(facilities, 6, (facility, callback2) => {
         console.log(`Checking availability for ${facility.name}`);
-        async.map(facility.monthlyUrls, collectAvailableDates, (error3, monthlyAvailabilities) => {
+        async.map(facility.monthlyUrls, function(monthlyUrl, callback3) {
+          collectAvailableDates(monthlyUrl, function(error5, dates) {
+            if (error5) {
+              return callback3(error5);
+            }
+            return callback3(null, {
+              url: monthlyUrl,
+              dates: dates
+            });
+          });
+        }, (error3, monthlyAvailabilities) => {
           if (error3) {
             return callback2(error3);
           }
