@@ -19,3 +19,6 @@ body {
   margin: 0 auto;
 }
 
+#calendar .fc-content {
+  white-space: normal;
+}
