@@ -39,6 +39,7 @@ $(document).ready(function() {
 
   function createCalendar() {
     $('#calendar').fullCalendar({
+      height: 'auto',
       lang: 'ja',
       businessHours: true, // display buisiness hour
       events: events,
