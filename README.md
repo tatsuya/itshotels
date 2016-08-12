@@ -1,4 +1,4 @@
-# its-hotel-availability
+# itshotels
 
 ## Development
 
@@ -56,8 +56,8 @@ heroku ps:scale clock=1
 
 ### Renaming the app
 
-Heroku by default sets the application name randomly which is sometimes hard to remember. `heroku apps:rename` command allows us to rename the app with custom name from the CLI. For example, to rename the app named `its-kenpo-hotels`:
+Heroku by default sets the application name randomly which is sometimes hard to remember. `heroku apps:rename` command allows us to rename the app with custom name from the CLI. For example, to rename the app named `itshotels`:
 
 ```
-heroku apps:rename its-kenpo-hotels
+heroku apps:rename itshotels
 ```

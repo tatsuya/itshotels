@@ -1,5 +1,5 @@
 {
-  "name": "its-hotel-availability",
+  "name": "itshotels",
   "version": "0.0.0",
   "private": true,
   "engines": {
@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "debug": "DEBUG=its-hotel-availability:* npm start",
+    "debug": "DEBUG=itshotels:* npm start",
     "feed": "node ./scraper/run listAll",
     "test": "node_modules/.bin/mocha --reporter spec",
     "deploy": "git push heroku master"
