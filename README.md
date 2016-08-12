@@ -2,7 +2,7 @@
 
 ITS健保（関東ITソフトウェア健康保険組合）で利用可能な保養施設の空き状況を検索するウェブサイト（[http://itshotels.herokuapp.com/](http://itshotels.herokuapp.com/)）
 
-![screenshot](/screenshot.png?raw=true)
+<!-- ![screenshot](/screenshot.png?raw=true) -->
 
 ## Development
 
