@@ -15,8 +15,12 @@ hr {
   background: #eee;
   border-bottom: 1px solid #ddd;
   padding: 0 10px;
-  line-height: 40px;
+  line-height: 50px;
   font-size: 12px;
+}
+
+#top h2 {
+  margin: 0;
 }
 
 #filter {
