@@ -1,40 +1,48 @@
 # itshotels
 
+ITS健保（関東ITソフトウェア健康保険組合）で利用可能な保養施設の空き状況を検索するウェブサイト（[http://itshotels.herokuapp.com/](http://itshotels.herokuapp.com/)）
+
 ## Development
 
-Feed data:
+- Server: Node.js (ExpressJS)
+- Scraper: Node.js (PhantomJS)
+- Persistent Storage: Redis (or local filesystem only for development)
+
+### Scrape availability data
 
 ```
 npm run feed
 ```
 
-Start application:
+### Running application
+
+Normal mode:
 
 ```
 npm start
 ```
 
-Start application in debug mode:
+Debug mode:
 
 ```
 npm run debug
 ```
 
-Run unit test:
+### Running unit tests
 
 ```
 npm test
 ```
 
-## Deploying on Heroku
+## Deployment
 
-Redis add-on is needed to run the application. To install the add-on run the following command:
+`Procfile` is available for deploying on Heroku. Heroku's Redis add-on is required before running the application. To install the add-on run the following command:
 
 ```
 heroku addons:create heroku-redis:hobby-dev
 ```
 
-Deploy the application to Heroku:
+Deploy:
 
 ```
 npm run deploy
@@ -42,7 +50,7 @@ npm run deploy
 
 ### Clock process on Heroku
 
-There is a scheduled job implemented to feed the information about the latest hotels availability. To run this scheduled job on Heroku, I use [Heroku's clock process model](https://devcenter.heroku.com/articles/scheduled-jobs-custom-clock-processes). In `Procfile`, there is a following line:
+There is a scheduled job implemented to feed the information about the latest hotels availability. [Heroku's clock process model](https://devcenter.heroku.com/articles/scheduled-jobs-custom-clock-processes) is used to run this job periodically. In `Procfile`, there is a following line:
 
 ```
 clock: node scraper/clock.js
