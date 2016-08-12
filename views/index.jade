@@ -1,10 +1,15 @@
 extends layout
 
 block content
-  div.fixed.z2.top-0.left-0.right-0.p1(style="background: #eee; border-bottom: 1px solid #ddd;")
-    h1.h4.m0 ITS健保（関東ITソフトウェア健康保険組合）施設検索
+  div.fixed.z2.top-0.left-0.right-0.p1(style='background: #eee; border-bottom: 1px solid #ddd;')
+    div.flex
+      div.flex-auto
+        h1.h4.m0 ITS健保（関東ITソフトウェア健康保険組合）施設検索
+      div(style='padding-top: 3px;')
+        a(href='https://twitter.com/share' class='twitter-share-button' data-show-count='false') Tweet
   div#filter.p2
     #filter-title
       h2.h4 ホテル名で絞り込む
     #filter-hotel-checkboxes
   #calendar
+  script(async src='//platform.twitter.com/widgets.js' charset='utf-8')
