@@ -3,29 +3,12 @@ body {
   padding: 0;
   font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
   font-size: 14px;
-}
-
-hr {
-  background-color: #eee;
-  height: 1px;
-  border: 0;
-}
-
-#top {
-  background: #eee;
-  border-bottom: 1px solid #ddd;
-  padding: 0 10px;
-  line-height: 50px;
-  font-size: 12px;
-}
-
-#top h2 {
-  margin: 0;
+  color: #4c4c4c;
 }
 
 #filter {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 41px auto;
 }
 
 #calendar {
