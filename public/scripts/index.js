@@ -16,7 +16,6 @@ $(document).ready(function() {
           eventCount: 0
         };
         hotel.monthlyAvailabilities.forEach(function(monthlyAvailability) {
-          console.log(monthlyAvailability);
           monthlyAvailability.dates.forEach(function(date) {
             hotels[hotel.name].eventCount++;
             events.push({
