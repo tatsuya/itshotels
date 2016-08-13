@@ -6,6 +6,14 @@ body {
   color: #4c4c4c;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 #filter {
   max-width: 900px;
   margin: 41px auto;
