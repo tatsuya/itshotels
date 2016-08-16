@@ -8,13 +8,44 @@ body {
 
 a {
   text-decoration: none;
+  color: #4c4c4c;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-#filter {
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+th, td {
+  padding: .5em 0;
+  line-height: inherit;
+  border: 1px solid #ddd;
+}
+
+th {
+  text-align: left;
+  font-weight: 700;
+}
+
+.nav-item a {
+  color: #999;
+}
+
+.nav-item.active a {
+  color: #4c4c4c;
+}
+
+#table-hotel-info th {
+  min-width: 66px;
+}
+
+#main {
   max-width: 900px;
   margin: 41px auto;
 }
