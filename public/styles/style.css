@@ -33,6 +33,11 @@ th {
   font-weight: 700;
 }
 
+#main {
+  max-width: 900px;
+  margin: 41px auto;
+}
+
 .nav-item a {
   color: #999;
 }
@@ -45,11 +50,6 @@ th {
   min-width: 66px;
 }
 
-#main {
-  max-width: 900px;
-  margin: 41px auto;
-}
-
 #calendar {
   max-width: 900px;
   margin: 40px auto;
@@ -57,4 +57,9 @@ th {
 
 #calendar .fc-content {
   white-space: normal;
+}
+
+#foot {
+  max-width: 900px;
+  margin: 0 auto;
 }
