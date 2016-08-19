@@ -33,10 +33,20 @@ th {
   font-weight: 700;
 }
 
+#header {
+  background: #f2f2f2;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+footer {
+  border-top: 1px solid #e5e5e5;
+}
+
 #main {
   max-width: 900px;
   margin: 41px auto;
 }
+
 
 .nav-item a {
   color: #999;
