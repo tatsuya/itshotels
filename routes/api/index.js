@@ -1,16 +1,10 @@
 let express = require('express');
 let router = express.Router();
 
-var Hotels = require('../../lib/model/hotels');
+let hotels = require('./hotels');
+let prefectures = require('./prefectures');
 
-router.get('/hotels', function(req, res, next) {
-  Hotels.get(function(err, hotels) {
-    if (err) {
-      return next(err);
-    }
-    res.json(hotels.data);
-  });
-});
-
+router.use('/hotels', hotels);
+router.use('/prefectures', prefectures);
 
 module.exports = router;
