@@ -47,6 +47,9 @@ footer {
   margin: 41px auto;
 }
 
+label.disabled {
+  color: #ccc;
+}
 
 .nav-item a {
   color: #999;

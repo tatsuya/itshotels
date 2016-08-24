@@ -36,7 +36,44 @@ $(document).ready(function() {
     console.error(url, status, err.toString());
   });
 
+  function getAllEnabledCheckboxes() {
+    return $('#filter-hotel-checkboxes input[type="checkbox"]:enabled');
+  }
+
   function createCheckboxes(hotels) {
+    var checkAllLabel = [
+      '<label id="label-check-all" class="disabled mr1">',
+      '<input id="check-all" class="align-top" type="checkbox" disabled="disabled" value="checkAll" checked="checked">全て選択',
+      '</label>'
+    ].join('');
+
+    $('#filter-title').append(checkAllLabel);
+
+    $('#filter-title').on('change', 'input#check-all', function() {
+      if (this.checked) {
+        getAllEnabledCheckboxes().each(function check() {
+          $(this).prop('checked', true);
+        });
+        updateState();
+      }
+    });
+
+    var checkNoneLabel = [
+      '<label id="label-check-none">',
+      '<input id="check-none" class="align-top" type="checkbox" value="checkNone">全て解除',
+      '</label>'
+    ].join('');
+
+    $('#filter-title').append(checkNoneLabel);
+
+    $('#filter-title').on('change', 'input#check-none', function() {
+      if (this.checked) {
+        getAllEnabledCheckboxes().each(function uncheck() {
+          $(this).prop('checked', false);
+        });
+        updateState();
+      }
+    });
 
     var hotelPrefectures = {};
 
@@ -64,7 +101,7 @@ $(document).ready(function() {
         if (hotel.eventCount === 0) {
           html.push([
             '<li class="inline-block mr1">',
-            '<label style="color: #ccc;">',
+            '<label class="disabled">',
             '<input class="align-top" type="checkbox" disabled="disabled" value="' + hotel.name + '">' + hotel.name + ' (' + hotel.eventCount + ')',
             '</label>',
             '</li>'
@@ -87,14 +124,65 @@ $(document).ready(function() {
     $('#filter-hotel-checkboxes').append(html.join(''));
 
     $('#filter-hotel-checkboxes').on('change', 'input[type="checkbox"]', function() {
-      var checkedHotelNames = $("#filter-hotel-checkboxes input[type='checkbox']")
-        .filter(function() {
-          return this.checked;
-        }).map(function() {
-          return this.value;
-        }).get();
-      filterEvents(checkedHotelNames);
+      updateState();
     });
+  }
+
+  function allEnabledCheckboxesAreChecked() {
+    var enabledCheckboxes = getAllEnabledCheckboxes();
+    var total = enabledCheckboxes.length;
+    return enabledCheckboxes.filter(function() {
+      return this.checked;
+    }).length === total;
+  }
+
+  function allEnabledCheckboxesAreUnchecked() {
+    var enabledCheckboxes = getAllEnabledCheckboxes();
+    return enabledCheckboxes.filter(function() {
+      return this.checked;
+    }).length === 0;
+  }
+
+  function updateState() {
+    if (allEnabledCheckboxesAreChecked()) {
+      $('#filter-title input#check-all')
+        .prop('checked', true)
+        .prop('disabled', true);
+      $('#filter-title label#label-check-all')
+        .addClass('disabled');
+    } else {
+      $('#filter-title input#check-all')
+        .prop('checked', false)
+        .prop('disabled', false);
+      $('#filter-title label#label-check-all')
+      .removeClass('disabled');
+    }
+
+    if (allEnabledCheckboxesAreUnchecked()) {
+      $('#filter-title input#check-none')
+        .prop('checked', true)
+        .prop('disabled', true);
+      $('#filter-title label#label-check-none')
+        .addClass('disabled');
+    } else {
+      $('#filter-title input#check-none')
+        .prop('checked', false)
+        .prop('disabled', false);
+      $('#filter-title label#label-check-none')
+        .removeClass('disabled');
+    }
+
+    updateCalendar();
+  }
+
+  function updateCalendar() {
+    var checkedHotelNames = $("#filter-hotel-checkboxes input[type='checkbox']")
+      .filter(function() {
+        return this.checked;
+      }).map(function() {
+        return this.value;
+      }).get();
+    filterEvents(checkedHotelNames);
   }
 
   function createCalendar() {
