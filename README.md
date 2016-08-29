@@ -1,6 +1,6 @@
 # itshotels
 
-ITS健保（関東ITソフトウェア健康保険組合）で利用可能な保養施設の空き状況を検索するウェブサイト（[http://itshotels.herokuapp.com/](http://itshotels.herokuapp.com/)）
+ITS健保（関東ITソフトウェア健康保険組合）で利用可能な保養施設の空き状況を検索するウェブサイト（[http://itshotels.info/](http://itshotels.info/)）
 
 <!-- ![screenshot](/screenshot.png?raw=true) -->
 
@@ -71,3 +71,22 @@ Heroku by default sets the application name randomly which is sometimes hard to 
 ```
 heroku apps:rename itshotels
 ```
+
+### Setup custom domain for the app
+
+To make a Heroku app accessible via non-Heroku domains (for example, `itshotels.info`) you must add custom domain(s) to your application as described below.
+
+General steps:
+
+1. Own the custom domain name.
+2. Add the custom domain to your app with the `heroku domains:add` command.
+
+    ```
+    heroku domains:add itshotels.info
+    ```
+
+3. Look up the Heroku-supplied DNS Target for the custom domain using the `heroku domains` command.
+4. Configure your app’s DNS provider to point to the Heroku-supplied DNS Target.
+5. Test that your app is accessible via the custom domain.
+
+See [Custom Domain Names for Apps | Heroku Dev Center](https://devcenter.heroku.com/articles/custom-domains) for more details.
