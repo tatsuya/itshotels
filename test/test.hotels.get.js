@@ -2,5 +2,9 @@
 
 let Hotels = require('../lib/model/hotels');
 
-let hotels = Hotels.get();
-console.log(hotels.data);
+Hotels.get(function(err, hotels) {
+  if (err) {
+    throw err;
+  }
+  console.log(hotels.data);
+});

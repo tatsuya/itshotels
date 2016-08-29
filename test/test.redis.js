@@ -1,5 +1,5 @@
 let assert = require('assert');
-let redis = require('../lib/redis');
+let redis = require('../lib/storage/redis');
 
 const NAMESPACE = 'test';
 
