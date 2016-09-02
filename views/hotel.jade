@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  #main.p3
+    .hotel-info.pb3
+      h2
+        a(href=hotel.url) #{hotel.name}
+      .clearfix
+        .col.col-6.pr2
+          a(href=hotel.url)
+            img.fit(src=hotel.image.url)
+        .col.col-6.pl2
+          table#table-hotel-info.mb2.table-flush.table-light
+            tbody
+              tr
+                th.p1 名称
+                td.p1 トスラブ箱根 ビオーレ
+              tr
+                th.p1 住所
+                td.p1 神奈川県足柄下郡箱根町元箱根110-108
+              tr
+                th.p1 アクセス
+                td.p1 JR小田原駅下車元箱根行きバスで約45分
+              tr
+                th.p1 営業時間
+                td.p1 チェックイン15時・チェックアウト11時
+              tr
+                th.p1 電話番号
+                td.p1 0460-86-2800
+              tr
+                th.p1 料金
+                td.p1 1泊2食付・5400円～
+
+    .hotel-action.pb3
+      h2.center
+        a(href=hotel.url) この施設を予約する
