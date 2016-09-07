@@ -23,8 +23,8 @@ $(document).ready(function() {
           hotels[hotel.name].eventCount++;
           events.push({
             title: hotel.name,
-            start: date,
-            url: monthlyAvailability.url
+            url: '/hotels/' + hotel.key,
+            start: date
           });
         });
       });
@@ -193,7 +193,7 @@ $(document).ready(function() {
       events: events,
       eventClick: function(event) {
         if (event.url) {
-          window.open(event.url);
+          window.location.href = event.url;
           return false;
         }
       }

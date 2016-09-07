@@ -15,12 +15,17 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/:hotelName', function(req, res, next) {
-  let hotel = Hotels.getMetadata(req.params.hotelName);
-  res.render('hotel', {
-    path: '/hotels',
-    title: hotel.name + ' | ITS健保（関東ITソフトウェア健康保険組合）施設検索',
-    hotel: hotel
+router.get('/:hotelKey', function(req, res, next) {
+  Hotels.getOne(req.params.hotelKey, function(err, hotel) {
+    if (err) {
+      return next(err);
+    }
+    console.log(hotel);
+    res.render('hotel', {
+      path: '/hotels',
+      title: hotel.name + ' | ITS健保（関東ITソフトウェア健康保険組合）施設検索',
+      hotel: hotel
+    });
   });
 });
 
