@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var domainChecker = require('./middlewares/domain-checker');
 
 var routes = require('./routes');
 var hotels = require('./routes/hotels');
@@ -23,14 +24,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var domainChecker = function(req, res, next) {
-  if (req.hostname == 'itshotels.herokuapp.com') {
-    return res.redirect(301, 'http://itshotels.info' + req.path);
-  }
-  next();
-};
+// var domainChecker = function(req, res, next) {
+//   if (req.hostname === 'itshotels.herokuapp.com') {
+//     return res.redirect(301, 'http://itshotels.info' + req.path);
+//   }
+//   next();
+// };
 
-app.use(domainChecker);
+app.use(domainChecker());
 
 app.use('/', routes);
 app.use('/hotels', hotels);
