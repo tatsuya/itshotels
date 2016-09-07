@@ -24,13 +24,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// var domainChecker = function(req, res, next) {
-//   if (req.hostname === 'itshotels.herokuapp.com') {
-//     return res.redirect(301, 'http://itshotels.info' + req.path);
-//   }
-//   next();
-// };
-
 app.use(domainChecker());
 
 app.use('/', routes);
