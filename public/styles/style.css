@@ -6,6 +6,10 @@ body {
   color: #4c4c4c;
 }
 
+h1, h1.title, h2, h3, h4, h5, h6 {
+  color: #4c4c4c;
+}
+
 a {
   text-decoration: none;
   color: #4c4c4c;
@@ -13,24 +17,58 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  max-width: 100%;
-  width: 100%;
+  color: #4c4c4c;
 }
 
 th, td {
-  padding: .5em 0;
-  line-height: inherit;
-  border: 1px solid #ddd;
+  vertical-align: top;
 }
 
-th {
-  text-align: left;
-  font-weight: 700;
+#navbar-main li {
+  float: left;
+  margin-right: 20px;
+  min-height: 27px;
+}
+
+/*#navbar-main li:last-child {
+  float: left;
+  margin-right: 0;
+}*/
+
+/*#navbar-main li a {
+  color: #999;
+}*/
+
+#navbar-main li a:hover {
+  /*text-decoration: underline;*/
+  color: #000;
+}
+
+.row.hotel-title {
+  margin-top: 50px;
+}
+
+.row.hotel-content {
+  margin-top: 30px;
+}
+
+#filter-hotel-checkboxes li {
+  list-style: none;
+  float: left;
+  margin-right: 20px;
+}
+
+#calendar h2 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+#calendar table {
+  margin-bottom: 0;
+}
+
+#calendar button {
+  min-height: 0;
 }
 
 #header {
@@ -42,6 +80,11 @@ footer {
   border-top: 1px solid #e5e5e5;
 }
 
+#foot {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 #main {
   max-width: 900px;
   margin: 41px auto;
@@ -49,14 +92,6 @@ footer {
 
 label.disabled {
   color: #ccc;
-}
-
-.nav-item a {
-  color: #999;
-}
-
-.nav-item.active a {
-  color: #4c4c4c;
 }
 
 #table-hotel-info th {
@@ -70,9 +105,4 @@ label.disabled {
 
 #calendar .fc-content {
   white-space: normal;
-}
-
-#foot {
-  max-width: 900px;
-  margin: 0 auto;
 }

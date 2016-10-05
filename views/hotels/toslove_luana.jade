@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  #main
+
+    include partials/hotel-title
+
+    .row.hotel-content
+      .col
+        figure
+          a(href=hotel.url)
+            img(src=hotel.image.url)
+      .col
+        include ../partials/toslove_luana
+    .row(style='margin-top: 30px;')
+      .col(style='text-align: center')
+        a.button.primary.outline.big(href=hotel.url role='button' target='_blank') この施設を予約する

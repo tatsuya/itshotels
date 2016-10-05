@@ -40,14 +40,32 @@ $(document).ready(function() {
     return $('#filter-hotel-checkboxes input[type="checkbox"]:enabled');
   }
 
-  function createCheckboxes(hotels) {
+  function createCheckboxShortcuts() {
+    var html = [];
+    html.push('<div class="form">')
+    html.push('<div class="form-item checkboxes-inline" style="margin-bottom: 12px;">');
+
     var checkAllLabel = [
-      '<label id="label-check-all" class="disabled mr1">',
-      '<input id="check-all" class="align-top" type="checkbox" disabled="disabled" value="checkAll" checked="checked">全て選択',
+      '<label id="label-check-all" class="disabled">',
+      '<input id="check-all" type="checkbox" disabled="disabled" value="checkAll" checked="checked"> 全て選択',
       '</label>'
     ].join('');
 
-    $('#filter-title').append(checkAllLabel);
+    var checkNoneLabel = [
+      '<label id="label-check-none">',
+      '<input id="check-none" type="checkbox" value="checkNone"> 全て解除',
+      '</label>'
+    ].join('');
+
+    html.push(checkAllLabel);
+    html.push(checkNoneLabel);
+    html.push('</div>');
+    html.push('</div>');
+    return html.join('');
+  }
+
+  function createCheckboxes(hotels) {
+    $('#filter-title').append(createCheckboxShortcuts());
 
     $('#filter-title').on('change', 'input#check-all', function() {
       if (this.checked) {
@@ -57,14 +75,6 @@ $(document).ready(function() {
         updateState();
       }
     });
-
-    var checkNoneLabel = [
-      '<label id="label-check-none">',
-      '<input id="check-none" class="align-top" type="checkbox" value="checkNone">全て解除',
-      '</label>'
-    ].join('');
-
-    $('#filter-title').append(checkNoneLabel);
 
     $('#filter-title').on('change', 'input#check-none', function() {
       if (this.checked) {
@@ -90,17 +100,19 @@ $(document).ready(function() {
     });
 
     var html = [];
-    html.push('<ul class="list-reset">');
+    html.push('<table class="flat">');
+    html.push('<tbody>');
     Object.keys(hotelPrefectures).sort().forEach(function(prefectureCode) {
       var hotels = hotelPrefectures[prefectureCode].hotels;
       var prefectureName = hotelPrefectures[prefectureCode].name_ja;
-      html.push('<li>');
-      html.push('<ul class="list-reset">');
-      html.push('<li class="inline-block mr2"><span class="bold">' + prefectureName + '</span></li>');
+      html.push('<tr>');
+      html.push('<td class="col-1"><span class="bold">' + prefectureName + '</span></td>');
+      html.push('<td>');
+      html.push('<ul>');
       hotels.forEach(function(hotel) {
         if (hotel.eventCount === 0) {
           html.push([
-            '<li class="inline-block mr1">',
+            '<li>',
             '<label class="disabled">',
             '<input class="align-top" type="checkbox" disabled="disabled" value="' + hotel.name + '">' + hotel.name + ' (' + hotel.eventCount + ')',
             '</label>',
@@ -108,7 +120,7 @@ $(document).ready(function() {
           ].join(''));
         } else {
           html.push([
-            '<li class="inline-block mr1">',
+            '<li>',
             '<label>',
             '<input class="align-top" type="checkbox" value="' + hotel.name + '" checked="checked">' + hotel.name + ' (' + hotel.eventCount + ')',
             '</label>',
@@ -116,10 +128,12 @@ $(document).ready(function() {
           ].join(''));
         }
       });
-      html.push('</li>');
       html.push('</ul>');
+      html.push('</td>');
+      html.push('</tr>');
     });
-    html.push('</ul>');
+    html.push('</tbody>');
+    html.push('</table>');
 
     $('#filter-hotel-checkboxes').append(html.join(''));
 

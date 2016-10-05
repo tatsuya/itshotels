@@ -1,457 +1,207 @@
 extends layout
 
 block content
-  #main.p3
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/toslove_viole/index.html') トスラブ箱根 ビオーレ
-      .clearfix
-        .col.col-6.pr2
+  #main
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/toslove_viole') トスラブ箱根 ビオーレ
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/toslove_viole/index.html')
-            img.fit(src=images[0].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 トスラブ箱根 ビオーレ
-              tr
-                th.p1 住所
-                td.p1 神奈川県足柄下郡箱根町元箱根110-108
-              tr
-                th.p1 アクセス
-                td.p1 JR小田原駅下車元箱根行きバスで約45分
-              tr
-                th.p1 営業時間
-                td.p1 チェックイン15時・チェックアウト11時
-              tr
-                th.p1 電話番号
-                td.p1 0460-86-2800
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[0].url)
+      .col
+        include partials/toslove_viole
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/toslove_wasorin/index.html') トスラブ箱根 和奏林
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/toslove_wasorin') トスラブ箱根 和奏林
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/toslove_wasorin/index.html')
-            img.fit(src=images[1].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 トスラブ箱根 和奏林
-              tr
-                th.p1 住所
-                td.p1 神奈川県足柄下郡箱根町元箱根110
-              tr
-                th.p1 アクセス
-                td.p1 JR小田原駅下車元箱根行きバス約45分
-              tr
-                th.p1 営業時間
-                td.p1 チェックイン15時・チェックアウト11時
-              tr
-                th.p1 電話番号
-                td.p1 0460-83-7600
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[1].url)
+      .col
+        include partials/toslove_wasorin
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/toslove_luana/index.html') トスラブ館山 ルアーナ
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/toslove_luana') トスラブ館山 ルアーナ
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/toslove_luana/index.html')
-            img.fit(src=images[2].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 トスラブ館山 ルアーナ
-              tr
-                th.p1 住所
-                td.p1 千葉県館山市洲宮833-1
-              tr
-                th.p1 アクセス
-                td.p1 JR内房線館山駅下車、または高速バス館山駅下車。
-              tr
-                th.p1 営業時間
-                td.p1 チェックイン15時・チェックアウト11時
-              tr
-                th.p1 電話番号
-                td.p1 0470-29-7000
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[2].url)
+      .col
+        include partials/toslove_luana
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/toslove_yuzawa/index.html') トスラブ湯沢
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/toslove_yuzawa') トスラブ湯沢
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/toslove_yuzawa/index.html')
-            img.fit(src=images[3].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 トスラブ湯沢
-              tr
-                th.p1 住所
-                td.p1 新潟県南魚沼郡湯沢町土樽414
-              tr
-                th.p1 アクセス
-                td.p1 上越新幹線越後湯沢駅下車送迎バスあり
-              tr
-                th.p1 営業時間
-                td.p1 チェックイン15時・チェックアウト11時
-              tr
-                th.p1 電話番号
-                td.p1 025-787-4511
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[3].url)
+      .col
+        include partials/toslove_yuzawa
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/nakazawa.html') 中沢ヴィレッジ
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/nakazawa') 中沢ヴィレッジ
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/nakazawa.html')
-            img.fit(src=images[4].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 中沢ヴィレッジ
-              tr
-                th.p1 住所
-                td.p1 群馬県吾妻郡草津町618
-              tr
-                th.p1 アクセス
-                td.p1 JR吾妻線長野原草津口駅下車、草津温泉行きバス約30分、終点草津温泉駅下車、送迎バス約5分
-              tr
-                th.p1 電話番号
-                td.p1 0279-88-3232
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[4].url)
+      .col
+        include partials/nakazawa
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/katsuura.html') ブルーベリーヒル勝浦
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/katsuura') ブルーベリーヒル勝浦
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/katsuura.html')
-            img.fit(src=images[5].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 ブルーベリーヒル勝浦
-              tr
-                th.p1 住所
-                td.p1 千葉県勝浦市興津1920
-              tr
-                th.p1 アクセス
-                td.p1 JR外房線勝浦駅または上総興津駅下車、送迎あり（要予約）
-              tr
-                th.p1 電話番号
-                td.p1 0470-76-3400
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[5].url)
+      .col
+        include partials/katsuura
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/biwako.html') 琵琶レイクオーツカ
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/biwako') 琵琶レイクオーツカ
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/biwako.html')
-            img.fit(src=images[6].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 琵琶レイクオーツカ
-              tr
-                th.p1 住所
-                td.p1 滋賀県大津市南小松1054-3
-              tr
-                th.p1 アクセス
-                td.p1 JR湖西線近江舞子駅下車徒歩約5分（京都駅より新快速で約30分）
-              tr
-                th.p1 電話番号
-                td.p1 077-596-1711
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[6].url)
+      .col
+        include partials/biwako
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/nasu.html') ホテルハーヴェスト那須
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/nasu') ホテルハーヴェスト那須
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/nasu.html')
-            img.fit(src=images[7].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 ホテルハーヴェスト那須
-              tr
-                th.p1 住所
-                td.p1 栃木県那須郡那須町大字高久丙1792
-              tr
-                th.p1 アクセス
-                td.p1 東北新幹線那須塩原駅下車シャトルバス約40分
-              tr
-                th.p1 電話番号
-                td.p1 0287-76-2085
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[7].url)
+      .col
+        include partials/nasu
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/ito.html') ホテルハーヴェスト伊東
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/ito') ホテルハーヴェスト伊東
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/ito.html')
-            img.fit(src=images[8].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 ホテルハーヴェスト伊東
-              tr
-                th.p1 住所
-                td.p1 静岡県伊東市竹の内1-5-14
-              tr
-                th.p1 アクセス
-                td.p1 JR伊東線伊東駅下車徒歩約12分またはシャトルバス（有料）約5分
-              tr
-                th.p1 電話番号
-                td.p1 0557-38-6373
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[8].url)
+      .col
+        include partials/ito
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/katsuyama.html') ホテルハーヴェスト　スキージャム勝山
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/katsuyama') ホテルハーヴェスト　スキージャム勝山
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/katsuyama.html')
-            img.fit(src=images[9].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 ホテルハーヴェスト　スキージャム勝山
-              tr
-                th.p1 住所
-                td.p1 福井県勝山市170-70
-              tr
-                th.p1 アクセス
-                td.p1 えちぜん鉄道勝山駅下車シャトルバス約30分
-              tr
-                th.p1 電話番号
-                td.p1 0779-87-0081
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[9].url)
+      .col
+        include partials/katsuyama
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/nanki.html') ホテルハーヴェスト南紀田辺
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/nanki') ホテルハーヴェスト南紀田辺
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/nanki.html')
-            img.fit(src=images[10].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 ホテルハーヴェスト南紀田辺
-              tr
-                th.p1 住所
-                td.p1 和歌山県田辺市新庄町2901-1
-              tr
-                th.p1 アクセス
-                td.p1 JR紀勢本線紀伊田辺駅下車シャトルバス約15分
-              tr
-                th.p1 電話番号
-                td.p1 0739-25-6106
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[10].url)
+      .col
+        include partials/nanki
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/madarao.html') ホテルハーヴェスト斑尾
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/madarao') ホテルハーヴェスト斑尾
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/madarao.html')
-            img.fit(src=images[11].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 ホテルハーヴェスト斑尾
-              tr
-                th.p1 住所
-                td.p1 長野県上水内郡信濃町古海3575-8
-              tr
-                th.p1 アクセス
-                td.p1 北陸新幹線飯山駅下車路線バス約45分
-              tr
-                th.p1 電話番号
-                td.p1 026-258-3611
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[11].url)
+      .col
+        include partials/madarao
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/kyoto.html') ホテル日航プリンセス京都
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/kyoto') ホテル日航プリンセス京都
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/kyoto.html')
-            img.fit(src=images[12].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 ホテル日航プリンセス京都
-              tr
-                th.p1 住所
-                td.p1 京都府京都市下京区烏丸高辻東入高橋町630番地
-              tr
-                th.p1 アクセス
-                td.p1 地下鉄烏丸線四条駅5番出口より徒歩約3分
-              tr
-                th.p1 電話番号
-                td.p1 075-342-2111
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[12].url)
+      .col
+        include partials/kyoto
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/tateshina.html') リゾートホテル蓼科
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/tateshina') リゾートホテル蓼科
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/tateshina.html')
-            img.fit(src=images[13].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 リゾートホテル蓼科
-              tr
-                th.p1 住所
-                td.p1 長野県茅野市北山4035
-              tr
-                th.p1 アクセス
-                td.p1 中央本線茅野駅下車路線バス約32分、中央自動車道諏訪南ICより約30分（八ヶ岳エコーラインを北上し、ビーナスラインを左折）。
-              tr
-                th.p1 電話番号
-                td.p1 0266-67-2626
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[13].url)
+      .col
+        include partials/tateshina
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/kyukaruizawa.html') ホテルハーヴェスト 旧軽井沢
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/kyukaruizawa') ホテルハーヴェスト 旧軽井沢
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/kyukaruizawa.html')
-            img.fit(src=images[14].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 ホテルハーヴェスト 旧軽井沢
-              tr
-                th.p1 住所
-                td.p1 長野県北佐久郡軽井沢町軽井沢1178-493
-              tr
-                th.p1 アクセス
-                td.p1 北陸新幹線軽井沢駅下車徒歩約11分
-              tr
-                th.p1 電話番号
-                td.p1 0267-41-3005
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[14].url)
+      .col
+        include partials/kyukaruizawa
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/kamakura.html') 鎌倉パークホテル
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/kamakura') 鎌倉パークホテル
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/kamakura.html')
-            img.fit(src=images[15].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 鎌倉パークホテル
-              tr
-                th.p1 住所
-                td.p1 神奈川県鎌倉市坂ノ下33-6
-              tr
-                th.p1 アクセス
-                td.p1 JR横須賀線・鎌倉駅下車タクシー約5～10分、江ノ島電鉄線・長谷駅下車徒歩約12分。
-              tr
-                th.p1 電話番号
-                td.p1 0467-25-5121
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[15].url)
+      .col
+        include partials/kamakura
 
-    .hotel-info.pb2
-      h2
-        a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/iwaya.html') 角間温泉　岩屋館
-      .clearfix
-        .col.col-6.pr2
+    .row(style='margin-top: 50px;')
+      .col
+        h2
+          a(href='/hotels/iwaya') 角間温泉　岩屋館
+    .row(style='margin-top: 30px;')
+      .col
+        figure
           a(href='http://www.its-kenpo.or.jp/shisetsu/hoyou/chokuei/iwaya.html')
-            img.fit(src=images[16].url)
-        .col.col-6.pl2
-          table#table-hotel-info.mb2.table-flush.table-light
-            tbody
-              tr
-                th.p1 名称
-                td.p1 角間温泉　岩屋館
-              tr
-                th.p1 住所
-                td.p1 長野県上田市真田町長2868
-              tr
-                th.p1 アクセス
-                td.p1 北陸新幹線上田駅下車送迎バス（要予約）約30分
-              tr
-                th.p1 電話番号
-                td.p1 0268-72-2323
-              tr
-                th.p1 料金
-                td.p1 1泊2食付・5400円～
+            img(src=images[16].url)
+      .col
+        include partials/iwaya
