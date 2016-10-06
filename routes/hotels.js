@@ -18,8 +18,8 @@ router.get('/:hotelKey', function(req, res, next) {
     if (err) {
       return next(err);
     }
-    res.render(`hotels/${hotelKey}`, {
-      path: `/hotels/${hotelKey}`,
+    res.render('hotels/' + hotelKey, {
+      path: '/hotels/' + hotelKey,
       title: hotel.name + ' | ITS健保（関東ITソフトウェア健康保険組合）施設検索',
       hotel: hotel,
       hotels: Hotels.listNamesAndPaths()

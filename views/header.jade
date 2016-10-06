@@ -12,7 +12,7 @@
               a(href='/' class={muted: path !== '/'}) 空き状況カレンダー
           li(style="padding-top: 2px;")
             b
-              a(href='', class={muted: path.indexOf('/hotels') !== 0} data-component='dropdown' data-target='#dropdown-fixed')
+              a(href='', class={muted: path && path.indexOf('/hotels') !== 0} data-component='dropdown' data-target='#dropdown-fixed')
                 | 施設を選ぶ
                 span.caret.down
           //- li(style='min-width: 61px; padding-top: 2px;')
@@ -22,6 +22,7 @@
   ul
     li(class={bold: path === '/hotels'})
       a(href='/hotels') すべての施設
-    each hotel in hotels
-      li(class={bold: path === hotel.path})
-        a(href=hotel.path) #{hotel.name}
+    if hotels.length > 0
+      each hotel in hotels
+        li(class={bold: path === hotel.path})
+          a(href=hotel.path) #{hotel.name}
