@@ -1,12 +1,13 @@
-extends ../layout
+extends layout
 
 block content
 
-  include ../header
+  include header
 
   #main
-
-    include partials/hotel-title
+    .row.hotel-title
+      .col
+        h2 #{hotel.name}
 
     .row(style='margin-top: 30px;')
       .col
@@ -14,7 +15,7 @@ block content
           a(href=hotel.url)
             img(src=hotel.image.url)
       .col
-        include ../partials/kyukaruizawa
+        != html
     .row(style='margin-top: 30px;')
       .col(style='text-align: center')
         a.button.primary.outline.big(href=hotel.url role='button' target='_blank') この施設を予約する
