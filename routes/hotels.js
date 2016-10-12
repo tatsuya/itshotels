@@ -36,15 +36,19 @@ function renderPartial(key) {
 }
 
 router.get('/', function(req, res, next) {
-  Hotels.listNamesAndPaths((err, hotels) => {
+  Hotels.getData((err, hotels) => {
     if (err) {
       return next(err);
     }
+    let data = hotels.map((hotel) => {
+      hotel.html = partials[hotel.key];
+      return hotel;
+    });
     res.render('hotels', {
       path: '/hotels',
       title: '施設一覧 | ITS健保（関東ITソフトウェア健康保険組合）施設検索',
-      images: Hotels.listImages(),
-      hotels: hotels
+      hotels: data,
+      data: data
     });
   });
 });
@@ -55,7 +59,7 @@ router.get('/:hotelKey', function(req, res, next) {
     if (err) {
       return next(err);
     }
-    Hotels.listNamesAndPaths((err2, hotels) => {
+    Hotels.getData((err2, hotels) => {
       if (err2) {
         return next(err2);
       }

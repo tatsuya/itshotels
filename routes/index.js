@@ -4,7 +4,7 @@ var router = express.Router();
 var Hotels = require('../lib/model/hotels');
 
 router.get('/', function(req, res, next) {
-  Hotels.listNamesAndPaths((err, hotels) => {
+  Hotels.getData((err, hotels) => {
     if (err) {
       return next(err);
     }
