@@ -84,11 +84,6 @@ footer {
   border-top: 1px solid #e5e5e5;
 }
 
-#foot {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
 label.disabled {
   color: #ccc;
 }
