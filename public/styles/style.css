@@ -87,7 +87,9 @@ footer {
 
 #main {
   max-width: 900px;
+  min-height: 730px;
   margin: 41px auto;
+  padding: 10px 20px;
 }
 
 label.disabled {
