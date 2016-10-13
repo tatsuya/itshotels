@@ -54,8 +54,12 @@ th, td {
 
 #filter-hotel-checkboxes li {
   list-style: none;
-  float: left;
+  /*float: left;*/
   margin-right: 20px;
+}
+
+#filter-hotel-checkboxes label {
+  margin-right: 16px;
 }
 
 #calendar h2 {

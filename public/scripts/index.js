@@ -99,47 +99,51 @@ $(document).ready(function() {
       hotelPrefectures[prefectureCode].hotels.push(hotel);
     });
 
-    var html = [];
-    html.push('<table class="flat">');
-    html.push('<tbody>');
-    Object.keys(hotelPrefectures).sort().forEach(function(prefectureCode) {
-      var hotels = hotelPrefectures[prefectureCode].hotels;
-      var prefectureName = hotelPrefectures[prefectureCode].name_ja;
-      html.push('<tr>');
-      html.push('<td class="col-1"><span class="bold">' + prefectureName + '</span></td>');
-      html.push('<td>');
-      html.push('<ul>');
-      hotels.forEach(function(hotel) {
-        if (hotel.eventCount === 0) {
-          html.push([
-            '<li>',
-            '<label class="disabled">',
-            '<input class="align-top" type="checkbox" disabled="disabled" value="' + hotel.name + '">' + hotel.name + ' (' + hotel.eventCount + ')',
-            '</label>',
-            '</li>'
-          ].join(''));
-        } else {
-          html.push([
-            '<li>',
-            '<label>',
-            '<input class="align-top" type="checkbox" value="' + hotel.name + '" checked="checked">' + hotel.name + ' (' + hotel.eventCount + ')',
-            '</label>',
-            '</li>'
-          ].join(''));
-        }
-      });
-      html.push('</ul>');
-      html.push('</td>');
-      html.push('</tr>');
-    });
-    html.push('</tbody>');
-    html.push('</table>');
-
-    $('#filter-hotel-checkboxes').append(html.join(''));
+    $('#filter-hotel-checkboxes').append(createHotelFilter(hotelPrefectures));
 
     $('#filter-hotel-checkboxes').on('change', 'input[type="checkbox"]', function() {
       updateState();
     });
+  }
+
+  function createHotelFilter(hotelPrefectures) {
+    var html = [];
+    Object.keys(hotelPrefectures).sort().forEach(function(prefectureCode) {
+      var hotels = hotelPrefectures[prefectureCode].hotels;
+      var prefectureName = hotelPrefectures[prefectureCode].name_ja;
+      html.push('<h6 style="margin-top: 10px; margin-bottom: 0;">' + prefectureName + '</h6>');
+      html.push('<ul style="margin: 0;">');
+      hotels.forEach(function(hotel) {
+        var hotelCheckbox;
+        if (hotel.eventCount === 0) {
+          hotelCheckbox = createHotelCheckbox(hotel.name, hotel.eventCount, true);
+        } else {
+          hotelCheckbox = createHotelCheckbox(hotel.name, hotel.eventCount, false);
+        }
+        html.push('<li>' + hotelCheckbox + '</li>');
+      });
+      html.push('</ul>');
+    });
+    return html.join('');
+
+  }
+
+  function createHotelCheckbox(name, count, disabled) {
+    var html;
+    if (disabled) {
+      html = [
+        '<label class="disabled">',
+        '<input class="align-top" type="checkbox" value="' + name + '" disabled="disabled">' + name + ' (' + count + ')',
+        '</label>',
+      ];
+    } else {
+      html = [
+        '<label>',
+        '<input class="align-top" type="checkbox" value="' + name + '" checked="checked">' + name + ' (' + count + ')',
+        '</label>',
+      ];
+    }
+    return html.join('');
   }
 
   function allEnabledCheckboxesAreChecked() {
