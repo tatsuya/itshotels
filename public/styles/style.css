@@ -89,12 +89,6 @@ footer {
   margin: 0 auto;
 }
 
-#main {
-  min-height: 730px;
-  margin: 20px auto;
-  padding: 10px 20px;
-}
-
 label.disabled {
   color: #ccc;
 }
