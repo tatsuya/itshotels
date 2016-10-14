@@ -1,12 +1,9 @@
 body {
-  margin: 0;
-  padding: 0;
   font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
   font-size: 14px;
-  color: #4c4c4c;
 }
 
-h1, h1.title, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   color: #4c4c4c;
 }
 
@@ -20,20 +17,25 @@ a:hover {
   color: #4c4c4c;
 }
 
+th {
+  color: #4c4c4c;
+}
+
 th, td {
   vertical-align: top;
 }
 
 #navbar-main li {
   float: left;
-  margin-right: 20px;
   min-height: 27px;
+  margin-right: 20px;
 }
 
-/*#navbar-main li:last-child {
+#navbar-main li:last-child {
   float: left;
-  margin-right: 0;
-}*/
+  min-height: 27px;
+  margin-right: 10px;
+}
 
 /*#navbar-main li a {
   color: #999;
