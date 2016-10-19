@@ -4,18 +4,19 @@ block content
 
   include header
 
-  each hotel in data
-    .row
-      .col
-        #hotel-title(style="padding: 30px 20px 10px 20px;")
-          h2
-            a(href=hotel.path) #{hotel.name}
-    .row
-      .col
-        #hote-image(style="padding: 0px 20px;")
-          figure
-            a(href=hotel.url)
-              img(src=hotel.image.url)
-      .col
-        #hotel-description(style="padding: 0 20px;")
-          != hotel.html
+  #main
+    each hotel in data
+      .row
+        .col
+          #hotel-title
+            h2
+              a(href=hotel.path) #{hotel.name}
+      .row
+        .col
+          #hote-image
+            figure
+              a(href=hotel.url)
+                img(src=hotel.image.url)
+        .col
+          #hotel-description
+            != hotel.html

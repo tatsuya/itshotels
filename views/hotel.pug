@@ -4,23 +4,24 @@ block content
 
   include header
 
-  .row
-    .col
-      #hotel-title(style="padding: 30px 20px 10px 20px;")
-        h2
-          a(href=hotel.path) #{hotel.name}
+  #main
+    .row
+      .col
+        #hotel-title
+          h2
+            a(href=hotel.path) #{hotel.name}
 
-  .row
-    .col
-      #hote-image(style="padding: 0px 20px;")
-        figure
-          a(href=hotel.url)
-            img(src=hotel.image.url)
-    .col
-      #hotel-description(style="padding: 0 20px;")
-        != html
+    .row
+      .col
+        #hote-image
+          figure
+            a(href=hotel.url)
+              img(src=hotel.image.url)
+      .col
+        #hotel-description
+          != html
 
-  .row
-    .col
-      #reservation(style="padding: 20px; text-align: center")
-        a.button.primary.outline.big(href=hotel.url role='button' target='_blank') この施設を予約する
+    .row
+      .col
+        #reservation(style="padding-top: 20px; text-align: center")
+          a.button.primary.outline.big(href=hotel.url role='button' target='_blank') この施設を予約する

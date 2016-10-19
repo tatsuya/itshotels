@@ -46,17 +46,15 @@ th, td {
   color: #000;
 }
 
-.row.hotel-title {
-  margin-top: 50px;
-}
-
-.row.hotel-content {
-  margin-top: 30px;
+#main {
+  margin: auto;
+  max-width: 1200px;
+  min-height: 730px;
+  padding: 20px 20px 60px 20px;
 }
 
 #filter-hotel-checkboxes li {
   list-style: none;
-  /*float: left;*/
   margin-right: 20px;
 }
 
@@ -90,8 +88,8 @@ label.disabled {
   color: #ccc;
 }
 
-#table-hotel-info th {
-  min-width: 66px;
+#hotel-title {
+  padding: 10px 0 10px 0;
 }
 
 #calendar .fc-content {

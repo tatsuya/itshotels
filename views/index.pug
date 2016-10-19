@@ -4,12 +4,13 @@ block content
 
   include header
 
-  .row
-    .col.col-3
-      #filter(style="padding: 20px; min-height: 730px;")
-        #filter-title
-          h4 ホテル名で絞り込む
-        #filter-hotel-checkboxes
+  #main
+    .row
+      .col.col-3
+        #filter()
+          #filter-title
+            h4 ホテル名で絞り込む
+          #filter-hotel-checkboxes
 
-    .col.col-9
-      #calendar(style="padding: 20px; min-height: 730px;")
+      .col.col-9
+        #calendar()
