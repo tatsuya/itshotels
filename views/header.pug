@@ -24,5 +24,6 @@
       a(href='/hotels') すべての施設
     if hotels.length > 0
       each hotel in hotels
-        li(class={bold: path === hotel.path})
-          a(href=hotel.path) #{hotel.name}
+        if hotel.url
+          li(class={bold: path === hotel.path})
+            a(href=hotel.path) #{hotel.name}
