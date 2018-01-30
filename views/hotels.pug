@@ -6,17 +6,18 @@ block content
 
   #main
     each hotel in data
-      .row
-        .col
-          #hotel-title
-            h2
-              a(href=hotel.path) #{hotel.name}
-      .row
-        .col
-          #hote-image
-            figure
-              a(href=hotel.url)
-                img(src=hotel.image.url)
-        .col
-          #hotel-description
-            != hotel.html
+      if hotel.url
+        .row
+          .col
+            #hotel-title
+              h2
+                a(href=hotel.path) #{hotel.name}
+        .row
+          .col
+            #hotel-image
+              figure
+                a(href=hotel.url)
+                  img(src=hotel.image.url)
+          .col
+            #hotel-description
+              != hotel.html

@@ -46,7 +46,7 @@ router.get('/', function(req, res, next) {
     });
     res.render('hotels', {
       path: '/hotels',
-      title: '施設一覧 | ITS健保（関東ITソフトウェア健康保険組合）施設検索',
+      title: 'すべての施設 | ITS健保（関東ITソフトウェア健康保険組合）施設検索',
       hotels: data,
       data: data
     });
