@@ -3,7 +3,7 @@ var router = express.Router();
 
 var Hotels = require('../../lib/model/hotels');
 
-var areas = {
+const AREAS = {
   'トスラブ湯沢': {
     prefecture: {
       code: 'JP-15',
@@ -108,15 +108,28 @@ var areas = {
   }
 };
 
+const PREFECTURE_UNKNOWN = {
+  code: '',
+  name_ja: '不明'
+};
+
+function addPrefecture(hotel) {
+  let area = AREAS[hotel.name];
+  if (area) {
+    hotel.prefecture = area.prefecture;
+  } else {
+    console.warn(`No area defined for ${hotel.name}`);
+    hotel.prefecture = PREFECTURE_UNKNOWN;
+  }
+  return hotel;
+}
+
 router.get('/', function(req, res, next) {
-    Hotels.get(function(err, hotels) {
+  Hotels.get(function(err, hotels) {
     if (err) {
       return next(err);
     }
-    res.json(hotels.data.map(function(hotel) {
-      hotel.prefecture = areas[hotel.name].prefecture;
-      return hotel;
-    }));
+    res.json(hotels.data.map(addPrefecture));
   });
 });
 
