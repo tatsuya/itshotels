@@ -1,24 +1,19 @@
 .sticky#header
   .row(style='padding: 10px 20px;')
-    .col(style="padding-top: 5px; padding-bottom: 5px;")
+    .col
       #navbar-brand
         a(href='/')
-          h4(style='margin-bottom: 0;') ITS健保（関東ITソフトウェア健康保険組合）施設検索
-    .col(style="padding-top: 5px; padding-bottom: 5px;")
-      nav#navbar-main.float-right
-        ul
-          li(style="padding-top: 2px;")
-            b
-              a(href='/' class={muted: path !== '/'}) 空き状況カレンダー
-          li(style="padding-top: 2px;")
-            b
-              a(href='', class={muted: path && path.indexOf('/hotels') !== 0} data-component='dropdown' data-target='#dropdown-fixed')
-                | 施設を選ぶ
-                span.caret.down
-          //- li(style='min-width: 61px; padding-top: 2px;')
-          //-   a(href='https://twitter.com/share' class='twitter-share-button' data-show-count='false')
-
-#dropdown-fixed.dropdown
+          h5(style='padding-top: 2px; margin-bottom: 2px;') ITS健保（関東ITソフトウェア健康保険組合）施設検索
+    .col.push-right
+      nav#navbar-main
+        ul(style="padding-top: 4px;")
+          li
+            a(href='/' class={muted: path !== '/'}) 空き状況カレンダー
+          li
+            a(href='' class={muted: path && path.indexOf('/hotels') !== 0} data-component='dropdown' data-target='#dropdown-hotels')
+              | 施設を選ぶ
+              span.caret.down
+#dropdown-hotels.dropdown.hide
   ul
     li(class={bold: path === '/hotels'})
       a(href='/hotels') すべての施設
