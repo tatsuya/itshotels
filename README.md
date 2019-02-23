@@ -1,6 +1,6 @@
 # itshotels
 
-ITS健保（関東ITソフトウェア健康保険組合）で利用可能な保養施設の空き状況を検索するウェブサイト（[http://itshotels.info/](http://itshotels.info/)）
+ITS健保（関東ITソフトウェア健康保険組合）で利用可能な保養施設の空き状況を検索するウェブサイト（[https://www.its-kenpo.com/](https://www.its-kenpo.com/)）
 
 <!-- ![screenshot](/screenshot.png?raw=true) -->
 
